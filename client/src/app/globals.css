@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+:root {
+    --primary: #2563EB;
+    --secondary: #1B95E0;
+    --text: #333333;
+    --softText: #666666;
+    --bg: #dfe9ff;
+    --softBg: #F0F4F8;
+    --darkText: #FFFFFF;
+    --darkBg: #121212;
+    --darkSoftBg: #1E1E1E;
+    --darkSoftText: #B3B3B3;
+    --accent: #FF4081;
+    --muted: #8E8E8E;
+    --border: #D1D5DB;
+    --hoverBg: #DFE8FC;
+    --darkHoverBg: #2A2A2A;
+}

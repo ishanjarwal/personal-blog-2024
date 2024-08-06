@@ -1,0 +1,39 @@
+.darkmode {
+    position: relative;
+    width: 48px;
+    height: 24px;
+    border: none;
+    outline: none;
+    border-radius: 48px;
+    border: 1px solid black;
+}
+
+.darkmode .sun {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 4px;
+    font-size: 164x;
+    color: black;
+}
+
+.darkmode .moon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4px;
+    font-size: 14px;
+    color: black;
+}
+
+.darkmode .toggle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* left: 2px; */
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: black;
+    transition-duration: 2s;
+}

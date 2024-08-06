@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar/Navbar";
+import MobileMenu from "@/components/navbar/mobileMenu/MobileMenu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +13,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="w-full">
+          <Navbar />
+          {/* <MobileMenu /> */}
+          <div className="max-w-screen-2xl mx-auto">
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
