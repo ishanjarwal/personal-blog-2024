@@ -22,3 +22,25 @@
     --hoverBg: #DFE8FC;
     --darkHoverBg: #2A2A2A;
 }
+
+.truncate3Lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+
+.truncate2Lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+
+.ql-editor {
+    min-height: 400px;
+}

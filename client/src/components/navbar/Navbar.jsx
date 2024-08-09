@@ -1,22 +1,27 @@
 "use client"
 import Link from 'next/link'
 import styles from './navbar.module.css'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
 import { MdBookmarkBorder } from "react-icons/md";
 import { FiHeart } from "react-icons/fi";
 import { IoMenu } from "react-icons/io5";
 import Image from 'next/image';
 import MegaMenu from './megaMenu/MegaMenu';
+import { MobileMenuContext } from '@/contexts/MobileMenuContext';
 const Navbar = () => {
 
     const [dark, setDark] = useState(false);
-    const status = "authenticated"
+    const { open, setOpen } = useContext(MobileMenuContext);
+    const status = "unauthenticated"
     return (
-        <div className='w-full'>
+        <div className='w-full z-[100] border-b border-gray-300'>
             <div className="relative mx-auto max-w-screen-2xl md:h-28 h-16 md:px-16 px-4 flex justify-between items-center">
                 <div className='flex justify-start items-center'>
-                    <button className='lg:hidden block text-2xl me-2'>
+                    <button
+                        className='lg:hidden block text-2xl me-2'
+                        onClick={() => setOpen(true)}
+                    >
                         <IoMenu />
                     </button>
                     <Link className='h-8 relative' href={'/'}>
@@ -25,14 +30,14 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className='flex self-stretch items-center space-x-4'>
-                    <div className='lg:flex hidden items-stretch self-stretch space-x-4 text-text'>
-                        <Link className='uppercase flex items-center' href={'/'}>home</Link>
-                        <Link className='uppercase flex items-center' href={'/'}>archive</Link>
-                        <Link className='uppercase flex items-center' href={'/'}>top</Link>
-                        <Link className='uppercase flex items-center' href={'/'}>picks</Link>
+                    <div className='lg:flex hidden items-stretch self-stretch space-x-6 text-text'>
+                        <Link className='uppercase flex items-center font-bold' href={'/'}>home</Link>
+                        <Link className='uppercase flex items-center font-bold' href={'/'}>archive</Link>
+                        <Link className='uppercase flex items-center font-bold' href={'/'}>most viewed</Link>
+                        <Link className='uppercase flex items-center font-bold' href={'/'}>editor's picks</Link>
                         <div className='group cursor-pointer flex items-center'>
-                            <span className='uppercase cursor-pointer'>categories</span>
-                            <div className='absolute w-full top-32 left-0 shadow-lg opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:top-28 duration-150'>
+                            <span className='uppercase cursor-pointer font-bold'>categories</span>
+                            <div className='absolute w-full z-10 top-32 left-0 shadow-lg opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:top-28 duration-150'>
                                 <div>
                                     <MegaMenu title={"categories"} href={'/'} />
                                 </div>
@@ -61,7 +66,7 @@ const Navbar = () => {
                                 </button>
                             </>
                             :
-                            <Link className='uppercase py-2 px-4 rounded-md border-primary border-2 text-primary' href={'/login'}>Login</Link>
+                            <Link className='uppercase py-2 px-4 rounded-md border-primary border-2 text-primary md:text-md text-sm hover:bg-hoverBg' href={'/login'}>Login</Link>
                         }
                     </div>
                 </div>

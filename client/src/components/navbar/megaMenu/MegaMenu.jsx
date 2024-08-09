@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import styles from './megaMenu.module.css'
+import clsx from 'clsx'
 
 const MegaMenu = ({ title, href, cols, data }) => {
     return (
-        <div className='w-full h-full   py-8 bg-white overflow-y-auto'>
+        <div className='w-full h-full  py-8 bg-white overflow-y-auto max-h-[calc(100vh - 112px)]'>
             {/* <div className='flex justify-between items-center'>
                 <h1 className='text-3xl uppercase'>{title}</h1>
                 <Link href={href}>View All »</Link>
@@ -16,13 +18,13 @@ const MegaMenu = ({ title, href, cols, data }) => {
                     ))}
                 </div>
                 <div className='col-span-4 px-8'>
-                    <div className="grid grid-cols-3 gap-4">
-                        {Array.from({ length: 9 }).map((_, idx) => (
-                            <Link href={'/'} className='group flex justify-start w-full items-start space-x-4'>
+                    <div className="grid grid-cols-6 gap-4">
+                        {Array.from({ length: 12 }).map((_, idx) => (
+                            <Link href={'/'} className={clsx(styles.listItem, 'group xl:col-span-2 col-span-3 flex justify-start w-full items-start space-x-4')}>
                                 <div className='relative w-20 rounded-lg aspect-square overflow-hidden'>
                                     <Image src={'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600'} fill />
                                 </div>
-                                <p className='flex-1 font-bold text-sm'>
+                                <p className={clsx('truncate3Lines', 'flex-1 font-bold text-md')}>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla modi ad officia!
                                 </p>
                             </Link>

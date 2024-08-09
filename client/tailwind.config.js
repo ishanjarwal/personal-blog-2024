@@ -19,6 +19,10 @@ module.exports = {
         hoverBg: "var(--hoverBg)",
         darkHoverBg: "var(--darkHoverBg)"
       },
+      fontFamily: {
+        epilogue: "Epilogue",
+        nunito: "Nunito Sans"
+      }
     },
   },
   plugins: [],

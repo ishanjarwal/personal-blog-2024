@@ -1,0 +1,4 @@
+.inset_overlay {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8466839616706058) 0%, rgba(0, 0, 0, 0.44892485802914917) 60%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0) 100%);
+}

@@ -5,6 +5,11 @@ const nextConfig = {
             protocol: "https",
             hostname: 'images.pexels.com',
             pathname: "**"
+        },
+        {
+            protocol: "https",
+            hostname: 'image.lexica.art',
+            pathname: "**"
         }]
     }
 };

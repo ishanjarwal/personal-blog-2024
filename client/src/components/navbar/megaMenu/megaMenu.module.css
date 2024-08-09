@@ -1,0 +1,13 @@
+.listItem p,
+.listItem img {
+    transition-duration: 150ms;
+}
+
+.listItem:hover p {
+    text-decoration: underline;
+    font-weight: 800;
+}
+
+.listItem:hover img {
+    scale: 1.1;
+}
